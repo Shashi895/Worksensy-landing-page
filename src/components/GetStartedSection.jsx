@@ -97,12 +97,7 @@ const GetStartedSection = ({ onOpenWaitlist }) => {
                 <h3 className="text-[16px] font-black text-slate-900 mb-2">{step.title}</h3>
                 <p className="text-slate-500 text-[12px] leading-relaxed mb-5 flex-1">{step.desc}</p>
                 
-                <motion.div 
-                  whileHover={{ x: 3 }}
-                  className="mt-auto inline-flex items-center gap-1.5 text-indigo-600 font-black text-[12px] cursor-pointer"
-                >
-                   GET STARTED <ArrowRight className="w-4 h-4" />
-                </motion.div>
+
               </motion.div>
 
               {/* HIGH-FIDELITY ANIMATED ARROW (At Top Edge) */}

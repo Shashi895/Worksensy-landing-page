@@ -11,9 +11,8 @@ const CTA = () => {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/20 rounded-full blur-[80px]" />
 
           <div className="relative z-10 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl text-white mb-6 font-heading">
-              Something powerful is on{' '}
-              <span className="text-indigo-400">the way</span>
+            <h2 className="text-xl md:text-3xl text-white mb-6 font-heading whitespace-nowrap">
+              Something powerful is on <span className="text-indigo-400">the way</span>
             </h2>
             <p className="text-slate-400 text-lg mb-10 font-sans">
               We're putting the finishing touches on WorkSensy to bring you the best way to manage

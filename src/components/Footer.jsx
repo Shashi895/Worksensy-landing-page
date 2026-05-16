@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, Mail, Globe, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { Rocket, Mail, Globe, Instagram } from 'lucide-react';
 
 const footerLinks = [
   {
@@ -96,10 +96,10 @@ const Footer = () => {
               </div>
             </div>
 
-            <p className="text-slate-700 text-[13px] font-medium leading-relaxed mb-5">
+            <p className="text-slate-700 text-[11px] font-medium leading-relaxed mb-5">
               All your operations. One smarter platform.<br />
-              Manage tasks, projects, approvals, and<br />
-              teams—seamlessly.
+              Manage tasks, projects, approvals<br />
+              Teams—seamlessly.
             </p>
 
             <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-600 text-[11px] font-bold px-4 py-1.5 rounded-full mb-7">
@@ -156,20 +156,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-100 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[12px] text-slate-600 font-medium">
-            © 2024 Worksensy. All rights reserved.
+            © 2026 Worksensy. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">
             <span className="text-[12px] text-slate-600 font-medium">Follow us</span>
             <div className="flex items-center gap-2">
-              <a href="#" className="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-300 hover:shadow-sm transition-all">
-                <Twitter className="w-3.5 h-3.5" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-indigo-600 hover:border-indigo-200 hover:shadow-sm transition-all">
-                <Linkedin className="w-3.5 h-3.5" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-red-500 hover:border-red-200 hover:shadow-sm transition-all">
-                <Youtube className="w-3.5 h-3.5" />
+              <a href="https://www.instagram.com/worksensy/" className="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-pink-500 hover:border-pink-200 hover:shadow-sm transition-all">
+                <Instagram className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>

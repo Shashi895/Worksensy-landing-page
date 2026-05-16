@@ -124,11 +124,8 @@ const Features = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-auto pt-2">
-                <a href="#" className="inline-flex items-center gap-1.5 text-indigo-600 text-[12px] font-bold group-hover:gap-2.5 transition-all">
-                  Learn more <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-              </div>
+
+
             </motion.div>
           ))}
         </div>

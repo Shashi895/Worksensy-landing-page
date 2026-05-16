@@ -332,49 +332,8 @@ const WorkflowSection = () => {
           </motion.div>
         </div>
 
-        {/* BOTTOM: Testimonial Strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-slate-50/80 border border-slate-200 rounded-2xl px-6 py-4 flex flex-col md:flex-row items-center gap-4 text-center md:text-left"
-        >
-          {/* Quote */}
-          <div className="flex items-center gap-4 flex-1">
-            <div className="w-8 h-8 bg-white rounded-xl border border-slate-200 shadow-sm flex items-center justify-center flex-shrink-0">
-              <span className="text-indigo-600 text-xl font-black leading-none">"</span>
-            </div>
-            <p className="text-slate-900 text-[13px] leading-relaxed font-bold italic">
-              WorkSensy gives us the clarity and control we needed to scale our operations seamlessly.
-            </p>
-          </div>
 
-          {/* Divider */}
-          <div className="hidden md:block w-px h-8 bg-slate-300" />
 
-          {/* Person */}
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <img src="https://i.pravatar.cc/48?u=arjun" alt="Arjun Mehta" className="w-10 h-10 rounded-full object-cover shadow-sm border-2 border-white" />
-            <div>
-              <p className="text-[13px] font-black text-slate-900 leading-none mb-1">Arjun Mehta</p>
-              <p className="text-[10px] text-slate-700 font-bold">Head of Operations, TechNova</p>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden md:block w-px h-8 bg-slate-300" />
-
-          {/* Rating */}
-          <div className="flex-shrink-0 text-center">
-            <div className="flex items-center gap-0.5 mb-0.5">
-              {[1,2,3,4,5].map(i => (
-                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <p className="text-[12px] font-black text-slate-900 leading-none">4.9/5</p>
-            <p className="text-[9px] text-slate-700 font-bold">early access users</p>
-          </div>
-        </motion.div>
 
       </div>
     </section>

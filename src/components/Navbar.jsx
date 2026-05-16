@@ -72,12 +72,8 @@ const Navbar = ({ onOpenWaitlist }) => {
               <span className="text-[11px] font-bold text-indigo-600 whitespace-nowrap">Early Access Open</span>
             </div>
             
-            <button 
-              onClick={onOpenWaitlist}
-              className="text-sm font-bold text-slate-700 px-4 py-2.5 rounded-xl hover:bg-slate-50 border border-slate-200 transition-all"
-            >
-              Join Waitlist
-            </button>
+
+
             <button 
               onClick={onOpenWaitlist}
               className="btn-primary py-2.5 px-3 flex items-center gap-2 shadow-xl shadow-indigo-100 text-sm"
@@ -111,12 +107,8 @@ const Navbar = ({ onOpenWaitlist }) => {
                 <button onClick={onOpenWaitlist} className="text-left text-lg font-bold text-indigo-600 px-2">Early Access</button>
                 <hr className="border-slate-100" />
                 <div className="flex flex-col gap-3 px-2">
-                   <button 
-                    onClick={() => { setIsMenuOpen(false); onOpenWaitlist(); }}
-                    className="w-full py-3.5 rounded-xl border border-slate-200 font-bold text-slate-700"
-                   >
-                    Join Waitlist
-                   </button>
+
+
                    <button 
                     onClick={() => { setIsMenuOpen(false); onOpenWaitlist(); }}
                     className="btn-primary w-full py-3.5 rounded-xl font-bold flex items-center justify-center gap-2"

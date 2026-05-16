@@ -53,7 +53,7 @@ const stats = [
 
 const BentoSection = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className=" bg-white overflow-hidden">
       <div className="container-custom">
 
         {/* Header */}
@@ -97,9 +97,7 @@ const BentoSection = () => {
                 </div>
                 <h3 className="text-[15px] font-black text-slate-900 mb-2">{card.title}</h3>
                 <p className="text-slate-500 text-[12px] leading-relaxed flex-1">{card.desc}</p>
-                <a href="#" className="inline-flex items-center gap-1.5 text-indigo-600 text-[12px] font-bold mt-4 hover:gap-2.5 transition-all">
-                  Learn more <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+
               </motion.div>
             ))}
           </div>

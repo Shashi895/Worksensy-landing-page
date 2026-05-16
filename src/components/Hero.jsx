@@ -346,31 +346,8 @@ const Hero = ({ onOpenWaitlist }) => {
         </div>
       </section>
 
-      {/* Logo Cloud */}
-      <div className="py-10 bg-white border-y border-slate-100">
-        <div className="container-custom">
-          <p className="text-center text-xs font-semibold text-slate-400 mb-6 flex items-center justify-center gap-2">
-            <span className="text-indigo-400">✦</span>
-            Trusted by operations teams across startups and growing companies
-            <span className="text-indigo-400">✦</span>
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14">
-            {[
-              { name: 'TechNova', icon: '◈' },
-              { name: 'BrightLabs', icon: '⬡' },
-              { name: 'Novatech', icon: '◎' },
-              { name: 'CloudPeak', icon: '⬢' },
-              { name: 'SoftWarely', icon: '✳' },
-              { name: 'Nexify', icon: '⧖' },
-            ].map((logo) => (
-              <div key={logo.name} className="flex items-center gap-2 text-slate-400 hover:text-slate-600 transition-colors group">
-                <span className="text-lg group-hover:text-indigo-500 transition-colors">{logo.icon}</span>
-                <span className="text-sm font-bold tracking-tight">{logo.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+
+
     </>
   );
 };
