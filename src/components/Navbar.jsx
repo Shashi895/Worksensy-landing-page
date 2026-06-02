@@ -91,9 +91,9 @@ const Navbar = ({ onOpenWaitlist }) => {
               </div>
 
               <button
-                onClick={() =>
-                  window.open("https://www.worksensy.in/")
-                }
+                onClick={() => {
+                  window.location.href = "https://worksensy.in/login";
+                }}
                 className="btn-primary py-2.5 px-3 flex items-center gap-2 shadow-xl shadow-indigo-100 text-sm cursor-pointer"
               >
                 Log In <ArrowRight className="w-4 h-4" />
