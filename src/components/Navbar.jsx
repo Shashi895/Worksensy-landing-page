@@ -31,11 +31,11 @@ const Navbar = ({ onOpenWaitlist }) => {
         }}
       />
 
-      <div className="fixed top-4 left-0 right-0 z-50 px-4 md:px-10">
+      <div className="fixed top-3 sm:top-4 left-0 right-0 z-50 px-3 sm:px-4 md:px-10">
         <nav
           className={cn(
-            "max-w-[1600px] mx-auto rounded-3xl transition-all duration-300 py-4 px-6 md:px-10",
-            "bg-white/80 backdrop-blur-xl border border-slate-100/80 shadow-xl shadow-slate-200/40",
+            "max-w-[1600px] mx-auto rounded-2xl sm:rounded-3xl transition-all duration-300 py-3 sm:py-4 px-4 sm:px-6 md:px-10",
+            "bg-white/85 backdrop-blur-xl border border-slate-100/80 shadow-xl shadow-slate-200/40",
           )}
         >
           <div className="flex items-center justify-between">
@@ -100,12 +100,13 @@ const Navbar = ({ onOpenWaitlist }) => {
               </button>
             </div>
 
-            {/* Mobile Hamburger */}
+            {/* Mobile Hamburger Menu Button */}
             <button
-              className="lg:hidden text-slate-900 p-2 hover:bg-slate-50 rounded-lg"
+              className="lg:hidden text-slate-900 p-2 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle navigation menu"
             >
-              {isMenuOpen ? <X /> : <Menu />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
@@ -123,28 +124,39 @@ const Navbar = ({ onOpenWaitlist }) => {
                     <a
                       key={link.name}
                       href="#"
-                      className="flex items-center justify-between text-lg font-medium text-slate-900 px-2"
+                      className="flex items-center justify-between text-base font-semibold text-slate-900 px-2 py-1 hover:text-indigo-600 transition-colors"
                     >
                       {link.name}
-                      <ChevronDown className="w-5 h-5 text-slate-400" />
+                      <ChevronDown className="w-4 h-4 text-slate-400" />
                     </a>
                   ))}
                   <button
-                    onClick={onOpenWaitlist}
-                    className="text-left text-lg font-bold text-indigo-600 px-2"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      onOpenWaitlist();
+                    }}
+                    className="text-left text-base font-bold text-indigo-600 px-2 py-1"
                   >
                     Early Access
                   </button>
-                  <hr className="border-slate-100" />
-                  <div className="flex flex-col gap-3 px-2">
+                  <hr className="border-slate-100 my-1" />
+                  <div className="flex flex-col gap-2.5 px-2">
+                    <button
+                      onClick={() => {
+                        window.location.href = "https://worksensy.in/login";
+                      }}
+                      className="w-full py-3 rounded-xl border border-indigo-200 bg-indigo-50/50 text-indigo-600 font-bold flex items-center justify-center gap-2 hover:bg-indigo-100/60 transition-colors"
+                    >
+                      Log In <ArrowRight className="w-4 h-4" />
+                    </button>
                     <button
                       onClick={() => {
                         setIsMenuOpen(false);
                         onOpenWaitlist();
                       }}
-                      className="btn-primary w-full py-3.5 rounded-xl font-bold flex items-center justify-center gap-2"
+                      className="btn-primary w-full py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-indigo-200/50"
                     >
-                      Get Early Access <ArrowRight />
+                      Get Early Access <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>

@@ -67,16 +67,26 @@ const Hero = ({ onOpenWaitlist }) => {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap items-center gap-4 mb-10">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10">
                 <button 
                   onClick={onOpenWaitlist}
-                  className="btn-primary flex items-center gap-2 text-sm font-semibold px-6 py-3.5"
+                  className="btn-primary flex items-center gap-2 text-sm font-semibold px-6 py-3.5 cursor-pointer shadow-lg shadow-indigo-200/50"
                 >
                   Get Early Access <ArrowRight className="w-4 h-4" />
                 </button>
+
+                <button 
+                  onClick={() => {
+                    window.location.href = "https://worksensy.in/login";
+                  }}
+                  className="flex items-center gap-2 text-slate-800 text-sm font-semibold bg-white border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 px-6 py-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                >
+                  Log In <ArrowRight className="w-4 h-4" />
+                </button>
+
                 <button 
                   onClick={onOpenWaitlist}
-                  className="flex items-center gap-2.5 text-slate-700 text-sm font-semibold bg-white border border-slate-200 px-5 py-3.5 rounded-xl shadow-sm hover:shadow-md transition-all"
+                  className="flex items-center gap-2.5 text-slate-700 text-sm font-semibold bg-white/80 border border-slate-200 hover:bg-white px-5 py-3.5 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
                 >
                   <div className="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center">
                     <Play className="w-3 h-3 text-white fill-white ml-0.5" />
