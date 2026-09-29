@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket, Mail, Globe, Instagram } from 'lucide-react';
 
@@ -35,19 +35,18 @@ const footerLinks = [
   {
     title: 'Legal',
     links: [
-      { label: 'Privacy Policy', soon: false },
-      { label: 'Terms of Service', soon: false },
-      { label: 'Security', soon: false },
-      { label: 'Data Processing Agreement', soon: false },
+      { label: 'Privacy Policy', soon: false, path: '/privacy-policy' },
+      { label: 'Terms of Service', soon: false, path: '/terms-of-service' },
+      { label: 'User Data Deletion', soon: false, path: '/data-deletion' },
+      { label: 'Security & Compliance', soon: false, path: '/privacy-policy' },
     ],
   },
 ];
 
-const Footer = () => {
+const Footer = ({ onOpenWaitlist, onNavigate }) => {
   return (
     <footer className="relative bg-gradient-to-b from-indigo-50/40 via-slate-50/30 to-white pt-0 pb-8 overflow-hidden">
-
-      {/* Wave — absolute inside footer, blends with bg */}
+      {/* Wave SVG */}
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
@@ -66,23 +65,18 @@ const Footer = () => {
               <stop offset="100%" stopColor="#c7d2fe" stopOpacity="0.5" />
             </linearGradient>
           </defs>
-          {/* Deep back fill */}
           <path d="M0,30 C360,80 1080,0 1440,50 L1440,0 L0,0 Z" fill="url(#waveG1)" />
-          {/* Mid wave */}
           <path d="M0,50 C240,10 480,70 720,40 C960,10 1200,65 1440,35 L1440,0 L0,0 Z" fill="url(#waveG2)" />
-          {/* Stroke line */}
           <path d="M0,50 C240,10 480,70 720,40 C960,10 1200,65 1440,35"
             fill="none" stroke="#a5b4fc" strokeWidth="1" strokeOpacity="0.4" />
         </svg>
       </motion.div>
 
       <div className="container-custom pt-20 md:pt-24">
-
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-0 mb-12">
-          {/* Brand section right border on desktop */}
+          {/* Brand section */}
           <div className="lg:border-r lg:border-slate-100 lg:pr-12 pb-10 lg:pb-0">
-            {/* Logo — same style as Navbar */}
             <div className="flex items-center gap-2.5 mb-5">
               <div className="w-10 h-10 overflow-hidden rounded-xl shadow-lg shadow-indigo-200 flex-shrink-0">
                 <img src="/worksensy.png" alt="WorkSensy Logo" className="w-full h-full object-cover" />
@@ -98,8 +92,7 @@ const Footer = () => {
 
             <p className="text-slate-700 text-[11px] font-medium leading-relaxed mb-5">
               All your operations. One smarter platform.<br />
-              Manage tasks, projects, approvals<br />
-              Teams—seamlessly.
+              Manage tasks, projects, approvals &amp; leads seamlessly.
             </p>
 
             <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-600 text-[11px] font-bold px-4 py-1.5 rounded-full mb-7">
@@ -119,7 +112,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* RIGHT: Link Columns — with dividers between each */}
+          {/* RIGHT: Link Columns */}
           <div className="lg:pl-12 grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-100">
             {footerLinks.map((col, i) => (
               <motion.div
@@ -135,8 +128,18 @@ const Footer = () => {
                   {col.links.map((link, j) => (
                     <li key={j} className="flex items-center gap-2">
                       <a
-                        href="#"
-                        className={`text-[13px] font-medium transition-colors ${link.soon ? 'text-slate-400 cursor-default pointer-events-none' : 'text-slate-700 hover:text-indigo-600'}`}
+                        href={link.path || '#'}
+                        onClick={(e) => {
+                          if (link.path && onNavigate) {
+                            e.preventDefault();
+                            onNavigate(link.path);
+                          }
+                        }}
+                        className={`text-[13px] font-medium transition-colors ${
+                          link.soon
+                            ? 'text-slate-400 cursor-default pointer-events-none'
+                            : 'text-slate-700 hover:text-indigo-600 cursor-pointer'
+                        }`}
                       >
                         {link.label}
                       </a>
@@ -156,19 +159,18 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-100 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[12px] text-slate-600 font-medium">
-            © 2026 Worksensy. All rights reserved.
+            &copy; 2026 Worksensy. All rights reserved.
           </p>
 
           <div className="flex items-center gap-4">
             <span className="text-[12px] text-slate-600 font-medium">Follow us</span>
             <div className="flex items-center gap-2">
-              <a href="https://www.instagram.com/worksensy/" className="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-pink-500 hover:border-pink-200 hover:shadow-sm transition-all">
+              <a href="https://www.instagram.com/worksensy/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg border border-slate-200 flex items-center justify-center text-slate-600 hover:text-pink-500 hover:border-pink-200 hover:shadow-sm transition-all">
                 <Instagram className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
         </div>
-
       </div>
     </footer>
   );
